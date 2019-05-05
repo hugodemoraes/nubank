@@ -54,7 +54,7 @@ export default function Tabs({ translateY }) {
     >
       <TabsContainer>
         {tabs.map(tab => (
-          <TabItem key={tab.icon}>
+          <TabItem key={tab.icon} onPress={() => {}}>
             <Icon name={tab.icon} size={24} color="#FFF" />
             <TabText>{tab.text}</TabText>
           </TabItem>

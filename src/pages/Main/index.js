@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   Container,
   Content,
+  CardWrapper,
   Card,
   CardHeader,
   CardContent,
@@ -21,11 +22,10 @@ import Tabs from '~/components/Tabs';
 import Menu from '~/components/Menu';
 
 const { height: windowHeight } = Dimensions.get('window');
-const MAX_ANIMATION_HEIGHT = windowHeight - 350;
+const MAX_ANIMATION_HEIGHT = windowHeight - 310;
 
 export default function Main() {
   const [showBalance, setShowBalance] = useState(true);
-  const [isOpened, setIsOpened] = useState(false);
 
   let offset = 0;
   const translateY = new Animated.Value(0);
@@ -87,7 +87,7 @@ export default function Main() {
           onGestureEvent={animatedEvent}
           onHandlerStateChange={onHandlerStateChange}
         >
-          <Card
+          <CardWrapper
             style={{
               transform: [
                 {
@@ -100,26 +100,32 @@ export default function Main() {
               ],
             }}
           >
-            <CardHeader>
-              <Icon name="attach-money" size={28} color="#666" />
-              <TouchableOpacity
-                onPress={() => {
-                  setShowBalance(!showBalance);
-                }}
-              >
-                <Icon name={showBalance ? 'visibility' : 'visibility-off'} size={28} color="#666" />
-              </TouchableOpacity>
-            </CardHeader>
-            <CardContent>
-              <Title>Saldo disponível</Title>
-              <Description blocked={!showBalance}>R$ 8.903,12</Description>
-            </CardContent>
-            <CardFooter>
-              <Annotation>
-                Transferência de R$ 2.500,00 recebida de Júlia Vacilotto hoje às 18:15.
-              </Annotation>
-            </CardFooter>
-          </Card>
+            <Card>
+              <CardHeader>
+                <Icon name="attach-money" size={28} color="#666" />
+                <TouchableOpacity
+                  onPress={() => {
+                    setShowBalance(!showBalance);
+                  }}
+                >
+                  <Icon
+                    name={showBalance ? 'visibility' : 'visibility-off'}
+                    size={28}
+                    color="#666"
+                  />
+                </TouchableOpacity>
+              </CardHeader>
+              <CardContent>
+                <Title>Saldo disponível</Title>
+                <Description blocked={!showBalance}>R$ 8.903,12</Description>
+              </CardContent>
+              <CardFooter>
+                <Annotation>
+                  Transferência de R$ 2.500,00 recebida de Júlia Vacilotto hoje às 18:15.
+                </Annotation>
+              </CardFooter>
+            </Card>
+          </CardWrapper>
         </PanGestureHandler>
       </Content>
 
