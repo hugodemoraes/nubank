@@ -36,6 +36,10 @@ export const CardHeader = styled.View`
   padding: 30px;
 `;
 
+export const VisibilityButton = styled.TouchableOpacity`
+  padding: 3px;
+`;
+
 export const CardContent = styled.View`
   flex: 1;
   padding: 0 30px;
@@ -59,9 +63,12 @@ export const CardFooter = styled.View`
   background: #eee;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  align-items: center;
+  flex-direction: row;
 `;
 
 export const Annotation = styled.Text`
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
+  margin-left: 10px;
 `;

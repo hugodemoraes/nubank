@@ -4,7 +4,16 @@ import QRCode from 'react-native-qrcode';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
-  Container, Code, Nav, NavItem, NavText, SignOutButton, SignOutButtonText,
+  Container,
+  Code,
+  BankData,
+  BankDataText,
+  Nav,
+  NavItem,
+  NavTextContent,
+  NavText,
+  SignOutButton,
+  SignOutButtonText,
 } from './styles';
 
 const navItems = [
@@ -15,6 +24,11 @@ const navItems = [
   {
     icon: 'person-outline',
     text: 'Perfil',
+    subtitle: 'Nome de preferência, telefone, e-mail',
+  },
+  {
+    icon: 'monetization-on',
+    text: 'Configurar NuConta',
   },
   {
     icon: 'credit-card',
@@ -45,11 +59,27 @@ export default function Menu({ translateY }) {
         />
       </Code>
 
+      <BankData>
+        <BankDataText>
+          Banco <BankDataText bold>260 - Nu Pagamentos S.A.</BankDataText>
+        </BankDataText>
+        <BankDataText>
+          Agência <BankDataText bold>0001</BankDataText>
+        </BankDataText>
+        <BankDataText>
+          Conta <BankDataText bold>0000000-0</BankDataText>
+        </BankDataText>
+      </BankData>
+
       <Nav>
         {navItems.map(item => (
           <NavItem key={item.icon}>
-            <Icon name={item.icon} size={20} color="#FFF" />
-            <NavText>{item.text}</NavText>
+            <Icon name={item.icon} size={30} color="#FFF" />
+            <NavTextContent>
+              <NavText>{item.text}</NavText>
+              {item.subtitle && <NavText subtitle>{item.subtitle}</NavText>}
+            </NavTextContent>
+            <Icon name="keyboard-arrow-right" size={20} color="#FFF" />
           </NavItem>
         ))}
       </Nav>

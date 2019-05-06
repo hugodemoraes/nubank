@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Animated, Dimensions, TouchableOpacity } from 'react-native';
+import { Animated, Dimensions } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -10,6 +10,7 @@ import {
   CardWrapper,
   Card,
   CardHeader,
+  VisibilityButton,
   CardContent,
   CardFooter,
   Title,
@@ -43,18 +44,6 @@ export default function Main() {
     },
   );
 
-  const handleAnimation = (opened) => {
-    Animated.timing(translateY, {
-      toValue: opened ? MAX_ANIMATION_HEIGHT : 0,
-      duration: 200,
-      useNativeDriver: true,
-    }).start(() => {
-      offset = opened ? MAX_ANIMATION_HEIGHT : 0;
-      translateY.setOffset(offset);
-      translateY.setValue(0);
-    });
-  };
-
   const onHandlerStateChange = (event) => {
     const { nativeEvent } = event;
 
@@ -72,7 +61,15 @@ export default function Main() {
         offset = 0;
       }
 
-      handleAnimation(opened);
+      Animated.timing(translateY, {
+        toValue: opened ? MAX_ANIMATION_HEIGHT : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = opened ? MAX_ANIMATION_HEIGHT : 0;
+        translateY.setOffset(offset);
+        translateY.setValue(0);
+      });
     }
   };
 
@@ -103,7 +100,7 @@ export default function Main() {
             <Card>
               <CardHeader>
                 <Icon name="attach-money" size={28} color="#666" />
-                <TouchableOpacity
+                <VisibilityButton
                   onPress={() => {
                     setShowBalance(!showBalance);
                   }}
@@ -113,15 +110,16 @@ export default function Main() {
                     size={28}
                     color="#666"
                   />
-                </TouchableOpacity>
+                </VisibilityButton>
               </CardHeader>
               <CardContent>
                 <Title>Saldo disponível</Title>
                 <Description blocked={!showBalance}>R$ 8.903,12</Description>
               </CardContent>
               <CardFooter>
+                <Icon name="receipt" size={28} color="#666" />
                 <Annotation>
-                  Transferência de R$ 2.500,00 recebida de Júlia Vacilotto hoje às 18:15.
+                  Pagamento de boleto no valor de R$ 2.500,00 realizado hoje às 18:15.
                 </Annotation>
               </CardFooter>
             </Card>
