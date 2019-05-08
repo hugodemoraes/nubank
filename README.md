@@ -1,65 +1,59 @@
-<!--
-*** Obrigado por estar vendo o nosso README. Se você tiver alguma sugestão
-*** que possa melhorá-lo ainda mais dê um fork no repositório e crie uma Pull
-*** Request ou abra uma Issue com a tag "sugestão".
-*** Obrigado novamente! Agora vamos rodar esse projeto incrível :D
--->
+# Nubank clone application
 
-<!-- PROJECT SHIELDS -->
+## Preview
 
-[![npm](https://img.shields.io/npm/v/react-native-template-rocketseat-basic.svg?label=npm%20package)](https://www.npmjs.com/package/react-native-template-rocketseat-basic)
-[![npm](https://img.shields.io/npm/dt/react-native-template-rocketseat-basic.svg)](https://www.npmjs.com/package/react-native-template-rocketseat-basic)
-[![GitHub issues](https://img.shields.io/github/issues-raw/rocketseat/react-native-template-rocketseat-basic.svg)](https://github.com/Rocketseat/react-native-template-rocketseat-basic/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/rocketseat/react-native-template-rocketseat-basic.svg)](https://github.com/Rocketseat/react-native-template-rocketseat-basic/commits/master)
-[![NPM](https://img.shields.io/npm/l/react-native-template-rocketseat-basic.svg)](https://choosealicense.com/licenses/mit)
+![gif preview](https://i.imgur.com/Xjon6xy.gif)
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://rocketseat.com.br">
-    <img src="https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/rocketseat_logo_roxa.png" alt="Logo">
-  </a>
+## Context
 
-  <h3 align="center">Template Rocketseat Basic</h3>
-</p>
+This is an clone application from Nubank APP layout made for personal study using React Naive. On this app you can show/hide your bank balance and swipe card to show the bank account informations.
 
-<!-- TABLE OF CONTENTS -->
+## Main technologies
 
-## Tabela de Conteúdo
+- [React Native](https://github.com/facebook/react-native)
+- [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
+- [Styled Components](https://github.com/styled-components)
 
-- [Tabela de Conteúdo](#tabela-de-conte%C3%BAdo)
-- [Documentação](#documenta%C3%A7%C3%A3o)
-- [Contribuição](#contribui%C3%A7%C3%A3o)
-- [Licença](#licen%C3%A7a)
-- [Contato](#contato)
+## Running the project
 
-<!-- ABOUT THE PROJECT -->
+Clone this repository and access the folder
 
-## Documentação
+```
+git clone https://github.com/hugodemoraes/nubank.git && cd ./nubank
+```
 
-Você pode encontrar a documentação completa desse projeto na **[Documentação Oficial](https://docs.rocketseat.dev/react-native-template-basic/introducao)**.
+Install the dependencies
 
-<!-- CONTRIBUTING -->
+```
+yarn
+```
 
-## Contribuição
+> If you don't have yarn installed on your computer access [here](https://yarnpkg.com/en/docs/install)
 
-Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+Install third-party libraries
 
-1. Faça um Fork do projeto
-2. Crie uma Branch para sua Feature (`git checkout -b feature/FeatureIncrivel`)
-3. Adicione suas mudanças (`git add .`)
-4. Comite suas mudanças (`git commit -m 'Adicionando uma Feature incrível!`)
-5. Faça o Push da Branch (`git push origin feature/FeatureIncrivel`)
-6. Abra uma Pull Request
+```
+react-native link
+```
 
-<!-- LICENSE -->
+And run the project on your platform
 
-## Licença
+### iOS
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+```
+react-native run-ios
+```
 
-<!-- CONTACT -->
+### Android
 
-## Contato
+```
+react-native run-android
+```
 
-Rocketseat - [Github](https://github.com/rocketseat) - **oi@rocketseat.com.br**
+## License
+
+Distributed under the MIT license. See `LICENSE` for more information.
+
+## Contact
+
+Hugo de Moraes - **hugoc.bmoraes@gmail.com**
